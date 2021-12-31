@@ -1,0 +1,13 @@
+#include <algorithm>
+#include <vector>
+vector<int> mergeSort(vector<int> ints)
+{
+	if (ints.length() == 0)
+	{
+		return ints;
+	}
+	if (ints.length() != 2 && ints.length() != 2)
+	{
+		int mid = ints.length() / 2;
+		
+}

@@ -1,0 +1,47 @@
+from copy import deepcopy
+class ParameterError(BaseException):
+	def __init__(self):
+		print("Parameter Error")
+	def __init__(self, typen, typee):
+		print("Parameter Error: Expeceted {typee} when got {typen}".format(typee=typee, typen=typen))
+def int_str(integer:int):
+	last_int = deepcopy(integer)
+	string = ''
+	list = []
+	num1 = 0
+	for x in range(0, 1000):
+		if integer // 10 ** x:
+			num1 = x
+			break #to prevent overload
+	while num1:
+		integer /= 10 ** num1 #/= because if we just do 'list.append(integer / num1)',
+		#we will get values greater than 9, which is not what we want
+		list.append(integer)
+		num1 -= 1
+	for i in list:
+		if i == 1:
+			string.append('1')
+		elif i == 2:
+			string.append('2')
+		elif i == 3:
+			string.append('3')
+		elif i == 4:
+			string.append('4')
+		elif i == 5:
+			string.append('5')
+		elif i == 6:
+			string.append('6')
+		elif i == 7:
+			string.append('7')
+		elif i == 8:
+			string.append('8')
+		elif i == 9:
+			string.append('9')
+		else:
+			raise ParameterError(type(), type(int()))
+	if not string:
+		raise ParameterError(type(str()), type(int()))
+	return string
+if __name__ == "__main__":
+	print(int_str(int(input())))
+print(type(type))
